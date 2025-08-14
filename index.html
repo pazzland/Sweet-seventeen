@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- Tambahkan ini di body, misal di atas atau di bawah section -->
+<audio id="bgMusic" loop>
+  <source src="Beautiful Stranger - Laufey.mp3" type="audio/mpeg">
+  Browsermu tidak mendukung audio.
+</audio>
+
+<!-- Tombol play/pause -->
+<button id="musicBtn" style="position:fixed; top:20px; right:20px; z-index:1000; padding:10px 14px; border-radius:8px; background:#ff4f87; color:white; border:none; cursor:pointer;">
+  🎵 Play Music
+</button>
+
+<script>
+// MEMAINKAN AUDIO
+const music=document.getElementById('bgMusic');
+const btn=document.getElementById('musicBtn');
+btn.addEventListener('click',()=>{
+  if(music.paused){ music.play(); btn.textContent="🎵 Pause Music"; }
+  else{ music.pause(); btn.textContent="🎵 Play Music"; }
+});
+</script>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Birthday Letter</title>
